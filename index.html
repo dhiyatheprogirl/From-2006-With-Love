@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forever &amp; Always — 20 Years Together</title>
+  <meta name="description" content="A 20th wedding anniversary gift for Periamma and Periappa, from Dhiya.">
+  <meta name="theme-color" content="#14060a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+  <!-- Floating golden particles (drawn by script.js) -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ============ OPENING SCREEN ============ -->
+  <section id="intro" aria-label="Opening">
+    <svg class="ornament" viewBox="0 0 300 40" aria-hidden="true">
+      <path d="M10 20 H120 M180 20 H290" />
+      <path d="M150 4 L162 20 L150 36 L138 20 Z" />
+      <circle cx="125" cy="20" r="3" /><circle cx="175" cy="20" r="3" />
+    </svg>
+    <p class="intro-line">Some stories are beautiful. Yours has lasted 20 years.</p>
+    <div class="silver-20 intro-20" aria-hidden="true">20</div>
+    <p class="intro-years">2006 — 2026</p>
+    <button id="openBtn" class="btn gold-btn" type="button">OPEN YOUR SURPRISE</button>
+  </section>
+
+  <!-- ============ MAIN SITE ============ -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#hero">20 · Forever &amp; Always</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" aria-label="Main">
+      <a href="#hero">Home</a>
+      <a href="#timeline">Our Years</a>
+      <a href="#gifts">Gifts</a>
+      <a href="#finale">Finale</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="silver-20 hero-20" aria-hidden="true">20</div>
+      <h1>20 YEARS.<br>ONE BEAUTIFUL FOREVER.</h1>
+      <p class="hero-sub">Happy 20th Wedding Anniversary</p>
+      <p class="hero-names">Periamma &amp; Periappa</p>
+      <p class="hero-date">27 November 2026</p>
+      <a class="scroll-cue" href="#timeline" aria-label="Scroll to timeline"><span></span></a>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <h2>Twenty Years of Togetherness</h2>
+      <ol class="timeline">
+        <li class="reveal"><span class="year">2006</span><h3>The Beginning</h3><p>A promise made, and a beautiful journey begun.</p></li>
+        <li class="reveal"><span class="year">2011</span><h3>Five Years Together</h3><p>Five years of building a home full of warmth.</p></li>
+        <li class="reveal"><span class="year">2016</span><h3>A Decade of Memories</h3><p>Ten years of moments worth keeping forever.</p></li>
+        <li class="reveal"><span class="year">2021</span><h3>Fifteen Years of Togetherness</h3><p>Fifteen years of standing side by side.</p></li>
+        <li class="reveal"><span class="year">2026</span><h3>Twenty Years of Love</h3><p>Two decades, and the story is still being written.</p></li>
+      </ol>
+    </section>
+
+    <!-- GIFT BOXES -->
+    <section id="gifts" class="section">
+      <h2>Three Little Gifts</h2>
+      <p class="lead">Tap each gift to open it.</p>
+      <div class="gift-row">
+        <button class="gift g1" type="button" data-gift="0" aria-label="Open gift 1: A Little Memory">
+          <span class="box"><span class="lid"></span><span class="body"></span></span>
+          <span class="gift-name">A Little Memory</span>
+        </button>
+        <button class="gift g2" type="button" data-gift="1" aria-label="Open gift 2: A Heartfelt Wish">
+          <span class="box"><span class="lid"></span><span class="body"></span></span>
+          <span class="gift-name">A Heartfelt Wish</span>
+        </button>
+        <button class="gift g3" type="button" data-gift="2" aria-label="Open gift 3: A Special Reminder">
+          <span class="box"><span class="lid"></span><span class="body"></span></span>
+          <span class="gift-name">A Special Reminder</span>
+        </button>
+      </div>
+      <p class="progress" id="progress" aria-live="polite">0 of 3 gifts opened</p>
+      <button id="secretBtn" class="btn gold-btn secret" type="button" hidden>THERE IS ONE LAST THING FOR YOU</button>
+    </section>
+
+    <!-- FINALE -->
+    <section id="finale" class="section finale">
+      <div class="silver-20 finale-20" aria-hidden="true">20</div>
+      <h2 class="finale-title">TWENTY YEARS DOWN.<br>FOREVER TO GO.</h2>
+      <p class="lead">Two decades of love, countless memories and a lifetime still waiting to unfold.</p>
+      <p class="lead">May your journey continue to be filled with happiness, laughter and beautiful memories.</p>
+      <p class="signoff">With love,<br>Dhiya</p>
+    </section>
+  </main>
+
+  <!-- Music -->
+  <audio id="bgm" src="assets/music.mp3" loop preload="none"></audio>
+  <button id="musicBtn" class="music" type="button" aria-pressed="false" hidden>
+    <span class="music-icon" aria-hidden="true">♪</span><span id="musicLabel">Music OFF</span>
+  </button>
+
+  <!-- Popup (gift messages + letter) -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
